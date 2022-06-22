@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_repository"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0.5dp"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/text_repository_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:ellipsize="end"
+        android:maxLines="@integer/single_line_text"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/image_repository_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name Repository" />
+
+    <TextView
+        android:id="@+id/text_repository_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="@integer/small_paragraph"
+        app:layout_constraintEnd_toEndOf="@id/text_repository_name"
+        app:layout_constraintStart_toStartOf="@id/text_repository_name"
+        app:layout_constraintTop_toBottomOf="@id/text_repository_name"
+        tools:text="But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."/>
+
+    <ImageView
+        android:id="@+id/image_repository_fork"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:contentDescription="@string/fork_icon_content_description"
+        android:src="@drawable/ic_forked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/text_repository_description"
+        app:layout_constraintTop_toBottomOf="@id/text_repository_description" />
+
+    <TextView
+        android:id="@+id/text_repository_fork_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/image_repository_fork"
+        app:layout_constraintStart_toEndOf="@id/image_repository_fork"
+        app:layout_constraintTop_toTopOf="@id/image_repository_fork"
+        tools:text="215" />
+
+    <ImageView
+        android:id="@+id/image_repository_star"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/big_margin"
+        android:contentDescription="@string/star_icon_content_description"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@id/image_repository_fork"
+        app:layout_constraintStart_toEndOf="@id/text_repository_fork_counter"
+        app:layout_constraintTop_toTopOf="@id/image_repository_fork" />
+
+    <TextView
+        android:id="@+id/text_repository_star_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/image_repository_fork"
+        app:layout_constraintStart_toEndOf="@id/image_repository_star"
+        app:layout_constraintTop_toTopOf="@id/image_repository_fork"
+        tools:text="251" />
+
+    <ImageView
+        android:id="@+id/image_repository_avatar"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"
+        android:layout_margin="@dimen/big_margin"
+        android:contentDescription="@string/repository_avatar_content_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_repository_name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_user" />
+
+    <TextView
+        android:id="@+id/textview_repository_owner_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="@integer/single_line_text"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/highlighted_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_repository_name"
+        app:layout_constraintTop_toBottomOf="@id/image_repository_avatar"
+        tools:text="username" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

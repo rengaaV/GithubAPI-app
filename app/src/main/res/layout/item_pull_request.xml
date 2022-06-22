@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_pull_request"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0.5dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/text_pull_request_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:maxLines="@integer/small_paragraph"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Name Pull Request" />
+
+    <TextView
+        android:id="@+id/text_pull_request_body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="@integer/big_paragraph"
+        app:layout_constraintEnd_toEndOf="@id/text_pull_request_title"
+        app:layout_constraintStart_toStartOf="@id/text_pull_request_title"
+        app:layout_constraintTop_toBottomOf="@id/text_pull_request_title"
+        tools:text="But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness." />
+
+    <ImageView
+        android:id="@+id/image_pull_request_avatar"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:contentDescription="@string/pull_request_avatar_content_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/text_pull_request_body"
+        app:layout_constraintTop_toBottomOf="@id/text_pull_request_body"
+        tools:src="@drawable/ic_user" />
+
+    <TextView
+        android:id="@+id/text_pull_request_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:ellipsize="end"
+        android:maxLines="@integer/single_line_text"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/highlighted_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/image_pull_request_avatar"
+        app:layout_constraintEnd_toStartOf="@id/text_pull_request_date"
+        app:layout_constraintStart_toEndOf="@id/image_pull_request_avatar"
+        app:layout_constraintTop_toTopOf="@id/image_pull_request_avatar"
+        tools:text="username" />
+
+    <TextView
+        android:id="@+id/text_pull_request_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/image_pull_request_avatar"
+        app:layout_constraintEnd_toEndOf="@id/text_pull_request_body"
+        tools:text="10/10/2010" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
