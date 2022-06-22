@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vagner.challenge_github.adapter.RepositoryAdapter
 import com.vagner.challenge_github.databinding.ActivityRepositoryBinding
+import com.vagner.challenge_github.utils.Constants.OWNER
+import com.vagner.challenge_github.utils.Constants.REPO
 import com.vagner.challenge_github.viewmodel.RepositoryViewModel
 
 
@@ -24,8 +26,8 @@ class RepositoryActivity : AppCompatActivity()   {
 
     private var adapter = RepositoryAdapter {
         val intent = Intent(applicationContext, PullRequestActivity::class.java)
-        intent.putExtra("owner", it.owner.login)
-        intent.putExtra("repo", it.name)
+        intent.putExtra(OWNER, it.owner.login)
+        intent.putExtra(REPO, it.name)
         startActivity(intent)
 
     }
@@ -111,7 +113,7 @@ class RepositoryActivity : AppCompatActivity()   {
 
     private fun errorRepositories() {
         viewModel.errorRepository.observe(this) {
-            Toast.makeText(this, R.string.connection_problem, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.unknown_error, Toast.LENGTH_SHORT).show()
         }
     }
 

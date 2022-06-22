@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.vagner.challenge_github.model.Repository
 import com.vagner.challenge_github.model.RepositoryResponse
+import com.vagner.challenge_github.utils.Constants.ERROR
 import com.vagner.challenge_github.webservice.GithubService
 import com.vagner.challenge_github.webservice.RetrofitService
 import retrofit2.Call
@@ -33,7 +34,7 @@ class RepositoryViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<RepositoryResponse>, t: Throwable) {
-                Log.d("Could not connect", t.message.toString())
+                Log.d(ERROR, t.message.toString())
                 errorRepository.postValue(t)
             }
 

@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.vagner.challenge_github.model.PullRequest
+import com.vagner.challenge_github.utils.Constants
+import com.vagner.challenge_github.utils.Constants.ERROR
 import com.vagner.challenge_github.webservice.GithubService
 import com.vagner.challenge_github.webservice.RetrofitService
 import retrofit2.Call
@@ -28,7 +30,7 @@ class PullRequestViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<List<PullRequest>>, t: Throwable) {
-                Log.d("Could not connect", t.message.toString())
+                Log.d(ERROR, t.message.toString())
             }
         })
 

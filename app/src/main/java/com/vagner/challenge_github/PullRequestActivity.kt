@@ -12,6 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vagner.challenge_github.adapter.PullRequestAdapter
 import com.vagner.challenge_github.databinding.ActivityPullRequestBinding
+import com.vagner.challenge_github.utils.Constants.OWNER
+import com.vagner.challenge_github.utils.Constants.REPO
 import com.vagner.challenge_github.viewmodel.PullRequestViewModel
 
 class PullRequestActivity : AppCompatActivity() {
@@ -42,8 +44,8 @@ class PullRequestActivity : AppCompatActivity() {
         binding.recyclerPullRequest.layoutManager = LinearLayoutManager(this)
         binding.recyclerPullRequest.setHasFixedSize(true)
 
-        owner = intent.getStringExtra("owner").toString()
-        repo = intent.getStringExtra("repo").toString()
+        owner = intent.getStringExtra(OWNER).toString()
+        repo = intent.getStringExtra(REPO).toString()
 
         setSupportActionBar(binding.toolbarPullRequest)
         binding.toolbarPullRequest.title = repo
